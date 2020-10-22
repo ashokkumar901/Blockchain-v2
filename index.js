@@ -11,7 +11,7 @@ const app = express();
 const blockchain = new Blockchain();
 const transactionPool = new TransactionPool();
 const wallet = new Wallet();
-const pubsub = new PubSub({ blockchain });
+const pubsub = new PubSub({ blockchain, transactionPool, wallet });
 
 const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
@@ -44,6 +44,8 @@ app.post('/api/transact', (req, res) => {
         return res.status(400).json({ type: 'error', message: error.message });
     }
     transactionPool.setTransaction(transaction);
+
+    pubsub.broadcastTransaction(transaction);
 
     res.json({ type: 'success', transaction });
 });
