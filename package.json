@@ -7,7 +7,8 @@
     "test": "jest --watchAll",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js"
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
+    "build-client": "parcel build client/src/index.html --out-dir client/dist"
   },
   "jest": {
     "testEnvironment": "node"
@@ -26,7 +27,10 @@
     "express": "^4.17.1",
     "git": "^0.1.5",
     "hex-to-binary": "^1.0.1",
+    "parcel-bundler": "^1.10.3",
     "pubnub": "^4.29.9",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "request": "^2.88.2",
     "uuid": "^3.3.2"
   }
