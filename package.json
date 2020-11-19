@@ -8,7 +8,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
-    "build-client": "parcel build client/src/index.html --out-dir client/dist"
+    "build-client": "parcel build client/src/index.html --out-dir client/dist",
+    "dev-client": "parcel client/src/index.html --out-dir client/dist"
   },
   "jest": {
     "testEnvironment": "node"
