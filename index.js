@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const request = require('request');
 const path = require('path');
+const cors = require('cors');
 const Blockchain = require('./blockchain');
 const TransactionPool = require('./wallet/transaction-pool');
 const Wallet = require('./wallet');
@@ -20,6 +21,7 @@ const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(cors());
 
 app.get('/api/blocks', (req, res) => {
     res.json(blockchain.chain);

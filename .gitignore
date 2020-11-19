@@ -185,7 +185,7 @@ ClientBin/
 *.publishsettings
 node_modules/
 client/dist/
-/.cache/
+.cache/
 orleans.codegen.cs
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components 
